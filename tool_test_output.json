@@ -1,0 +1,126 @@
+{
+    "summary": {
+        "num_errors": 0,
+        "num_failures": 1,
+        "num_skips": 0,
+        "num_tests": 1
+    },
+    "tests": [
+        {
+            "data": {
+                "inputs": {
+                    "assemblies": {
+                        "id": "3532804009bf215f",
+                        "src": "hdca"
+                    }
+                },
+                "job": {
+                    "command_line": null,
+                    "command_version": null,
+                    "copied_from_job_id": null,
+                    "create_time": "2025-08-08T22:35:12.245889",
+                    "dependencies": [],
+                    "exit_code": null,
+                    "external_id": null,
+                    "galaxy_version": "24.2",
+                    "handler": null,
+                    "history_id": "3532804009bf215f",
+                    "id": "23d1e18d29f26ce9",
+                    "inputs": {
+                        "assemblies1": {
+                            "id": "3532804009bf215f",
+                            "src": "hda",
+                            "uuid": "bbec05f5-4e6b-48e8-a1bf-0b15a2a3ceec"
+                        },
+                        "assemblies10": {
+                            "id": "510b4d2af7f2036c",
+                            "src": "hda",
+                            "uuid": "e6c18418-a740-41cf-878b-4b43f7e245f6"
+                        },
+                        "assemblies2": {
+                            "id": "df6f31178bbc1574",
+                            "src": "hda",
+                            "uuid": "58d2530a-25d0-4e6d-888e-800dff4344f4"
+                        },
+                        "assemblies3": {
+                            "id": "310581453b9b38f6",
+                            "src": "hda",
+                            "uuid": "b6d774ff-0670-411d-ab49-ea0cb571d386"
+                        },
+                        "assemblies4": {
+                            "id": "9ce2b35e89cb0592",
+                            "src": "hda",
+                            "uuid": "b34413b2-b472-4c9c-8f9b-5ff9147c1fb3"
+                        },
+                        "assemblies5": {
+                            "id": "6d17d52b2418f100",
+                            "src": "hda",
+                            "uuid": "b7e7368d-427e-443e-915b-37dafe8fc52a"
+                        },
+                        "assemblies6": {
+                            "id": "efa391761e7b253d",
+                            "src": "hda",
+                            "uuid": "1282d2d8-1bb1-42fb-8446-0ae482006fa9"
+                        },
+                        "assemblies7": {
+                            "id": "a30c0a6bb747b08f",
+                            "src": "hda",
+                            "uuid": "224841f3-ca5c-463d-84a5-f1209849a8b5"
+                        },
+                        "assemblies8": {
+                            "id": "3d9b5c17edcde8c7",
+                            "src": "hda",
+                            "uuid": "cdc0fe7c-660d-4bd7-a0c3-a8e109b727c2"
+                        },
+                        "assemblies9": {
+                            "id": "b3443a08680a38df",
+                            "src": "hda",
+                            "uuid": "6c3b9856-ea01-465d-9628-5dff0a03bb7a"
+                        }
+                    },
+                    "job_messages": null,
+                    "job_metrics": [],
+                    "job_runner_name": null,
+                    "job_stderr": null,
+                    "job_stdout": null,
+                    "model_class": "Job",
+                    "output_collections": {},
+                    "outputs": {
+                        "output": {
+                            "id": "23d1e18d29f26ce9",
+                            "src": "hda",
+                            "uuid": "dfe7c8e3-6c5d-45c1-8482-5929e1721336"
+                        }
+                    },
+                    "params": {
+                        "__input_ext": "\"input\"",
+                        "assemblies": "{\"values\": [{\"id\": 1, \"src\": \"hdca\"}]}",
+                        "chromInfo": "\"/tmp/tmpug_oevyq/galaxy-dev/tool-data/shared/ucsc/chrom/?.len\"",
+                        "dbkey": "\"?\""
+                    },
+                    "state": "error",
+                    "stderr": "",
+                    "stdout": "",
+                    "tool_id": "refchooser",
+                    "tool_stderr": "",
+                    "tool_stdout": "",
+                    "update_time": "2025-08-08T22:35:12.893159",
+                    "user_email": "planemo@galaxyproject.org",
+                    "user_id": "3532804009bf215f"
+                },
+                "output_problems": [
+                    "Job in error state.. tool_id: refchooser, exit_code: None, stderr: .",
+                    "Job in error state.. tool_id: refchooser, exit_code: None, stderr: ."
+                ],
+                "status": "failure",
+                "test_index": 0,
+                "time_seconds": 13.990611553192139,
+                "tool_id": "refchooser",
+                "tool_version": "0.2.1"
+            },
+            "has_data": true,
+            "id": "refchooser-0"
+        }
+    ],
+    "version": "0.1"
+}

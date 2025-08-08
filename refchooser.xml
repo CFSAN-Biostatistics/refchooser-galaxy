@@ -7,7 +7,7 @@
         mkdir ./assemblies &&
         #for assembly in $assemblies
             ln -sf '$assembly' ./assemblies/${assembly.element_identifier.replace(": ", ".").replace(" ", "_")}.fasta &&
-        #endfor
+        #end for
         refchooser metrics ./assemblies > metrics.txt &&
         cat ./assemblies/$() > $output
     ]]></command>
@@ -19,7 +19,7 @@
     </outputs>
     <tests>
         <test>
-            <param name="input">
+            <param name="assemblies">
                 <collection type="list">
                     <element name="SRR498285" value="test/reference_selection/assemblies/SRR498285_contigs.fasta" />
                     <element name="SRR498286" value="test/reference_selection/assemblies/SRR498286_contigs.fasta" />
@@ -49,6 +49,5 @@
   journal = {GitHub repository},
   url = {https://refchooser.readthedocs.io/en/latest/},
 }</citation>
-        <citation type="url">https://refchooser.readthedocs.io/en/latest/</citation>
     </citations>
 </tool>

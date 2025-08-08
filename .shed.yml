@@ -12,3 +12,4 @@ exclude:
  - tool_test_output.json
  - .python-version
  - job_conf_sample.yml
+ - .setup_done
