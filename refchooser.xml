@@ -8,13 +8,17 @@
         #for assembly in $assemblies
             ln -sf '$assembly' ./assemblies/${assembly.element_identifier.replace(": ", ".").replace(" ", "_")}.fasta &&
         #end for
-        refchooser metrics ./assemblies > metrics.txt &&
-        cat ./assemblies/$() > $output
+        refchooser sketch ./assemblies ./sketches &&
+        refchooser matrix ./assemblies ./sketches ${matrix} &&
+        export BEST=\$(refchooser metrics --sort Mean_Distance --top 1 ./assemblies ./sketches | tail -n 1 | cut -f 1) &&
+        echo "*** best accession \$BEST ***" >&2 &&
+        cat ./assemblies/\$BEST.fasta > $output
     ]]></command>
     <inputs>
         <param type="data_collection" collection_type="list" name="assemblies" format="fasta" />
     </inputs>
     <outputs>
+        <data name="matrix" label="Distance matrix" format="tsv" visible="false" />
         <data name="output" label="Centroidal assembly" format="fasta" />
     </outputs>
     <tests>
@@ -33,7 +37,7 @@
                     <element name="SRR498387" value="test/reference_selection/assemblies/SRR498387_contigs.fasta" />
                 </collection>
             </param>
-            <output name="output" value="test/reference_selection/assemblies/SRR498285_contigs.fasta" />
+            <output name="output" value="test/reference_selection/assemblies/SRR498286_contigs.fasta" />
         </test>
     </tests>
     <help><![CDATA[

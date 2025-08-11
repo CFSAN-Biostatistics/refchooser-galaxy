@@ -163,3 +163,5 @@ cython_debug/
 
 # Galaxy-tool Makefile items
 .setup_done
+tool_test_output.html
+tool_test_output.json

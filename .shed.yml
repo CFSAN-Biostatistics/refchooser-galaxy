@@ -3,13 +3,15 @@ description: Galaxy wrapper for Refchooser.
 name: refchooser
 owner: jpayne
 exclude:
- - test_data
- - .git
- - .gitignore
- - .gitmodules
+ - test-data/
+ - .git/
+ - .gitignore/
+ - .gitmodules/
  - README.md
  - tool_test_output.html
  - tool_test_output.json
  - .python-version
  - job_conf_sample.yml
  - .setup_done
+ - .testing
+ - Makefile
