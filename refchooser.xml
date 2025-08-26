@@ -12,14 +12,21 @@
         refchooser matrix ./assemblies ./sketches ${matrix} &&
         export BEST=\$(refchooser metrics --sort Mean_Distance --top 1 ./assemblies ./sketches | tail -n 1 | cut -f 1) &&
         echo "*** best accession \$BEST ***" >&2 &&
+        echo "\$BEST" > $best &&
         cat ./assemblies/\$BEST.fasta > $output
     ]]></command>
     <inputs>
         <param type="data_collection" collection_type="list" name="assemblies" format="fasta" />
     </inputs>
     <outputs>
-        <data name="matrix" label="Distance matrix" format="tsv" visible="false" />
-        <data name="output" label="Centroidal assembly" format="fasta" />
+        <data name="matrix" label="Distance matrix" format="tsv" hidden="false" />
+        <data name="best" label="Name of centroidal assembly" format="txt" hidden="true" />
+        <data name="output" label="Centroidal assembly..." format="fasta">
+            <actions>
+                <!-- copy the text from best into the label of this output-->
+                <action type="metadata" name="label" default="${best}" />
+            </actions>
+        </data>
     </outputs>
     <tests>
         <test>

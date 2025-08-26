@@ -14,7 +14,7 @@ help:  ## Show this help message
 
 test: .setup_done  ## Run tests
 	@echo "Running tests..."
-	planemo t --no_wait --galaxy_branch release_24.2 --skip_venv --biocontainers --job_config_file job_conf.yml --job_output_files ./.testing
+	planemo t --no_wait --galaxy_branch release_25.0 --skip_venv --biocontainers --job_config_file job_conf.yml --job_output_files ./.testing
 
 lint: .setup_done ## Run linter
 	@echo "Running linter..."
