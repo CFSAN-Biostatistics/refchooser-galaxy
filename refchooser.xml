@@ -12,20 +12,16 @@
         refchooser matrix ./assemblies ./sketches ${matrix} &&
         export BEST=\$(refchooser metrics --sort Mean_Distance --top 1 ./assemblies ./sketches | tail -n 1 | cut -f 1) &&
         echo "*** best accession \$BEST ***" >&2 &&
-        echo "\$BEST" > $best &&
-        cat ./assemblies/\$BEST.fasta > $output
+        mkdir output &&
+        cp ./assemblies/\$BEST.fasta output/\$BEST.fasta
     ]]></command>
     <inputs>
         <param type="data_collection" collection_type="list" name="assemblies" format="fasta" />
     </inputs>
     <outputs>
-        <data name="matrix" label="Distance matrix" format="tsv" hidden="false" />
-        <data name="best" label="Name of centroidal assembly" format="txt" hidden="true" />
-        <data name="output" label="Centroidal assembly..." format="fasta">
-            <actions>
-                <!-- copy the text from best into the label of this output-->
-                <action type="metadata" name="label" default="${best}" />
-            </actions>
+        <data name="matrix" label="Refchooser distance matrix for $on_string" format="tsv" hidden="false" />
+        <data name="best" format="txt" label="Best assembly" visible="false" >
+            <discover_datasets directory="output" pattern="__designation_and_ext__" assign_primary_output="true" visible="true" />
         </data>
     </outputs>
     <tests>
@@ -44,7 +40,13 @@
                     <element name="SRR498387" value="test/reference_selection/assemblies/SRR498387_contigs.fasta" />
                 </collection>
             </param>
-            <output name="output" value="test/reference_selection/assemblies/SRR498286_contigs.fasta" />
+            <output name="best" >
+                <discovered_dataset designation="SRR498286" ftype="fasta">
+                    <assert_contents>
+                        <has_text text="SRR498286" />
+                    </assert_contents>
+                </discovered_dataset>
+            </output>
         </test>
     </tests>
     <help><![CDATA[
